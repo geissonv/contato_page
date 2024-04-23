@@ -1,0 +1,139 @@
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --hightlight-color: rgba(255, 255, 255, 0.2);
+    --bg-switch-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba( 0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --hightlight-color: rgba(0, 0, 0, 0.1);
+    --bg-switch-url: url(./assets/sun.svg);
+}
+
+body {
+    /* background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+ func   background-position: top center;
+    background-size: cover; */
+
+    /* shortheand > background: color image repeat position/size */
+    background: var(--bg-url) no-repeat top center/cover;
+    text-align: center;
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+    margin: auto;
+    padding: 0;
+}
+
+.container {
+    margin: auto;
+    padding-top: 56px;
+    padding-bottom: 32px;
+    width: 360px;
+    height: 712px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .profile img {
+    width: 112px;
+    border-radius: 50%;
+}
+
+.switch {
+    position: relative;
+    width: 68px;
+
+    margin: 4px auto;
+}
+
+.switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--bg-switch-url) no-repeat center;
+    border: none;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.light .switch button {
+    right: 0;
+    left: initial;
+}
+
+.switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    --webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+.container .links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px;
+}
+
+button {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    width: 312px;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid var(--stroke-color);
+    background: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+
+    -webkit-backdrop-filter: blur(4px);
+
+    transition: background 0.5s;
+}
+
+.container .links button:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color) ;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: auto;
+}
+
+.social-links a ion-icon {
+    color: var(--text-color);
+    width: 24px;
+    height: 24px;
+    padding: 16px;
+    border-radius: 50%;
+}
+
+.social-links a ion-icon:hover {
+    background: var(--hightlight-color);
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
